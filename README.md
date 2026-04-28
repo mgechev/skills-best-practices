@@ -4,7 +4,7 @@ This guide explains how to write professional-grade skills for agents, validate 
 
 This guide is a concentrated set of best practices for creating agent skills. If you're looking for a comprehensive documentation see [Claude's docs](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices).
 
-**To evaluate if your skills do well and prevent regressions, check out [skillgrade]((https://github.com/mgechev/skillgrade).**
+**To evaluate if your skills do well and prevent regressions, check out [skillgrade](https://github.com/mgechev/skillgrade).**
 
 ## Structure of a skill
 
