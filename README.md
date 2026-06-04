@@ -71,6 +71,32 @@ Don't ask the LLM to write complex parsing logic or boilerplate code from scratc
 * **Offload fragile/repetitive tasks:** If the agent needs to parse a complex dataset or query a specific database, give it a tested Python, Bash, or Node script to run in the scripts/ directory.  
 * **Handle edge cases gracefully:** An agent relies on standard output (stdout/stderr) to know if a script succeeded. Write scripts that return highly descriptive, human-readable error messages so the agent knows exactly how to self-correct without needing user intervention.
 
+## Skill composition
+
+You can compose skills (also known as router skills) if you want to include a skill conditionally, or you want to create a skill that consists of subskills. Example:
+
+```
+---
+name: build_project
+description: ...
+---
+
+## Overview
+...
+
+## Build targets
+
+### Client
+
+To build the client into a deployable binary see [path to skills].
+
+### Server
+
+To build the server into a deployable binary see [path to skill].
+
+...
+```
+
 # Validation Guide
 
 Since LLMs will be using your skills, the best way I’ve identified to ensure they are useful is in collaboration with LLMs.
