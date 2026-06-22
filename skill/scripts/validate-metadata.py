@@ -43,4 +43,8 @@ def validate_metadata(name, description):
         sys.exit(0)
 
 if __name__ == "__main__":
-
+    parser = argparse.ArgumentParser(description="Validate skill metadata name and description")
+    parser.add_argument("--name", required=True, help="Skill name (lowercase, hyphen-separated)")
+    parser.add_argument("--description", default="", help="Skill description")
+    args = parser.parse_args()
+    validate_metadata(args.name, args.description)
