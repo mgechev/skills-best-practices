@@ -64,6 +64,19 @@ Be specific and consistent in the way you reference concepts in your skill files
 * **Use identical terminology:** Pick a single term to refer to a specific concept.  
 * **Specificity**: Use the most specific terminology that’s native to the domain that you describe. For example, in Angular use the concept “template” instead of “html”, “markup”, or “view”.
 
+## Declare approval boundaries for external actions
+
+Skills that can mutate external systems must separate evidence collection from action execution. The agent should know which steps are read-only, which steps draft a change, and which steps require explicit approval before touching a user account, billing state, production data, or public channel.
+
+For example, a TweetClaw social workflow can gather public X/Twitter source packets, summarize the evidence, and prepare a draft, but the skill should mark publishing, scheduling, following, liking, replying, deleting, or sending a direct message as approval-required steps. Keep the approval gate close to the exact action and include the account, destination, payload summary, and timeout behavior the agent must use.
+
+Add this pattern to action-capable skills:
+
+* **Read step:** Collect or normalize source data without changing external state.
+* **Draft step:** Prepare the payload and show the destination.
+* **Approval step:** Require explicit user approval before mutation.
+* **Execution step:** Run only the approved action and report the result.
+
 ## Bundle deterministic scripts for repetitive operations
 
 Don't ask the LLM to write complex parsing logic or boilerplate code from scratch every time it runs a skill.
