@@ -31,3 +31,6 @@ Use this checklist to perform a final audit of the generated skill before deploy
 *   [ ] **Edge Cases:** The `SKILL.md` includes an "Error Handling" section addressing common failure states or missing configurations.
 *   [ ] **Validation:** The `SKILL.md` includes a step to run validation scripts where applicable.
 
+## 6. External Action Safety
+*   [ ] **Read/Draft/Approve/Execute Boundary:** Skills that post, send, schedule, delete, bill, or mutate production state separate read-only evidence collection from draft creation, approval, and execution.
+*   [ ] **Approval Context:** Approval-required steps list the account or destination, payload summary, action type, and timeout behavior before execution.
